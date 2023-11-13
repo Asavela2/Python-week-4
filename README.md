@@ -93,10 +93,58 @@ An iterator in Python follows the iterator protocol, which involves implementing
 - The __next__ method returns the next element in the sequence and raises StopIteration when there are no more elements.
 
 
+`` # Creating an iterator for a list
+class MyIterator:
+    def __init__(self, data):
+        self.data = data
+        self.index = 0``
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index < len(self.data):
+            result = self.data[self.index]
+            self.index += 1
+            return result
+        else:
+            raise StopIteration
+
+`` #Using the iterator
+my_list = [1, 2, 3, 4, 5]
+my_iterator = MyIterator(my_list)
+for item in my_iterator:
+    print(item) ``
+
+
+## Generators:
+
+A generator in Python is a concise way to create iterators.
+It is a special type of iterator that is defined using a function with the yield keyword. 
+Generators provide a convenient way to iterate over a potentially large set of data without loading the entire set into memory.
 
 
 
+## yield Statement:
 
+The yield statement is used in a function to produce a series of values to be iterated over.
+When the generator function is called, it returns a generator object.
 
+## Lazy Evaluation:
+
+Generators use lazy evaluation, meaning they produce values on-the-fly and only when requested.
+This can be more memory-efficient than creating a list with all values at once.
+
+For Example :
+
+`` # Creating a generator function
+def my_generator(data):
+    for item in data:
+        yield item
+        # Using the generator
+        my_list = [1, 2, 3, 4, 5]
+        my_gen = my_generator(my_list)
+        for item in my_gen:
+    print(item) ``
 
 
