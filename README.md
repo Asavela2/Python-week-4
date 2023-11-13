@@ -171,6 +171,32 @@ Generators provide a more concise and readable way to create iterators.
 
 Generators allow the creation of infinite sequences, as values are generated only when needed.
 
+## Error Output Redirection:
+
+Error output redirection involves capturing and handling errors, 
+ensuring that they are properly logged or directed to the desired output stream.
+This is commonly done using the # try, # except, and # finally blocks.
+
+```
+try:
+    # Code that might raise an exception
+    result = 10 / 0
+except ZeroDivisionError as e:
+    # Handling specific exception
+    print(f"Error: {e}")
+except Exception as e:
+    # Handling other exceptions
+    print(f"Unexpected error: {e}")
+else:
+    # Code to execute if no exception occurred
+    print("No errors!")
+finally:
+    # Code to execute regardless of whether an exception occurred
+    print("Finally block executed.")
+```
+
+
+
     
 
 
