@@ -1,0 +1,25 @@
+## Inheritence
+
+Inheritance is a fundamental concept in object-oriented programming (OOP)
+where a new class (subclass or derived class)is created by inheriting attributes 
+and behaviors from an existing class (base class or parent class). 
+The subclass can add or override functionalities, promoting code reuse.
+
+# Example
+
+```
+class Animal:
+      def speak(self):
+        print("Generic animal sound")
+
+class Dog(Animal):
+    def bark(self):
+        print("Woof!")
+
+# Creating an instance of Dog
+my_dog = Dog()
+
+# Inheriting and using the speak method from Animal
+my_dog.speak()  # Output: Generic animal sound
+
+```
