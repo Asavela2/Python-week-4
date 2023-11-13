@@ -194,7 +194,26 @@ finally:
     # Code to execute regardless of whether an exception occurred
     print("Finally block executed.")
 ```
+## Key Points:
 
+# 1. Exception Handling:
+
+- Use try, except, and optionally finally blocks for effective exception handling.
+
+2. # Error Output Redirection:
+
+- Redirect error output to appropriate streams for logging or user feedback.
+
+3. # Program Termination:
+
+- Use sys.exit() or raise a SystemExit exception to gracefully terminate the program.
+
+4. # Exit Codes:
+
+- Provide meaningful exit codes (non-zero for errors) to indicate the program's status to calling processes.
+
+5. # Finally Block:
+- Use the finally block for cleanup operations that must be executed, whether an exception occurred or not.
 
 
     
