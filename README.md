@@ -84,12 +84,13 @@ Key Concepts:
 
 An object capable of returning its elements one at a time is called an iterable.
 - Examples of iterables include lists, tuples, strings, and more.
-- 
+  
 ## Iterator Protocol:
 
 An iterator in Python follows the iterator protocol, which involves implementing the __iter__ and __next__ methods.
-The __iter__ method returns the iterator object itself.
-The __next__ method returns the next element in the sequence and raises StopIteration when there are no more elements.
+- The __iter__ method returns the iterator object itself.
+  
+- The __next__ method returns the next element in the sequence and raises StopIteration when there are no more elements.
 
 
 
