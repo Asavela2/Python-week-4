@@ -216,6 +216,89 @@ finally:
 - Use the finally block for cleanup operations that must be executed, whether an exception occurred or not.
 
 
+# Logging
+
+- Logging in Python is a way to capture and store information about the execution of a program.
+- The logging module in Python provides a flexible and powerful framework for emitting log messages from Python programs.
+
+```
+ import logging
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG, 
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Example usage
+def example_function():
+    logging.debug("This is a debug message.")
+    logging.info("This is an info message.")
+    logging.warning("This is a warning message.")
+    logging.error("This is an error message.")
+    logging.critical("This is a critical message.")
+
+if __name__ == "__main__":
+    example_function()
+```
+# Explanation:
+1 ## Importing the logging Module:
+
+- Start by importing the logging module.
+  
+2 # Configuring Logging:
+
+- Use basicConfig to configure the logging system.
+- level sets the threshold level for the messages (e.g., logging.DEBUG).
+- format defines the format of the log messages.
+  
+3 # Logging Levels:
+
+- There are several logging levels available, including DEBUG, INFO, WARNING, ERROR, and CRITICAL. Each level represents the severity of the log message.
+- 
+4 # Logging Messages:
+
+- Use logging.debug(), logging.info(), logging.warning(), logging.error(), and logging.critical() to emit log messages at different levels.
+  
+5 # Log Message Format:
+
+- The format specified in basicConfig determines how the log messages are presented. %(asctime)s, %(levelname)s, and %(message)s are placeholders for the timestamp, log level, and message, respectively.
+  
+6 # Example Function:
+
+- In the example function (example_function), different log messages are emitted at various levels.
+  
+# Log Handlers and Formatters:
+- Handlers: Define where the log records go. Examples include the console (StreamHandler), files (FileHandler), or even network sockets (SocketHandler).
+
+- Formatters: Specify the layout of the log records. You can customize the appearance of log messages by configuring formatters.
+
+## Example with FileHandler and Formatter:
+
+```
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
+
+# Create a FileHandler and set its formatter
+file_handler = logging.FileHandler("example.log")
+file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(file_formatter)
+
+# Add the FileHandler to the root logger
+logging.getLogger('').addHandler(file_handler)
+
+# Example usage
+def example_function():
+    logging.debug("This is a debug message.")
+    logging.info("This is an info message.")
+    logging.warning("This is a warning message.")
+    logging.error("This is an error message.")
+    logging.critical("This is a critical message.")
+
+if __name__ == "__main__":
+    example_function()
+```
+
     
 
 
